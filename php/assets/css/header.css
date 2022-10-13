@@ -82,6 +82,14 @@
     color: #fff;
 }
 
+#header .header__login a.header__member {
+    border: 1px solid #006241;
+    border-radius: 50px;
+    background: #006241;
+    color: #fff;
+    padding: 8px 30px;
+}
+
 /* header ham */
 .header__ham {
     position: absolute;
@@ -171,7 +179,7 @@
         margin: 20px;
     }
     .mobile__nav ul li a {
-        padding: 10px;
+        padding: 10px 15px;
         white-space: nowrap;
         color: #fff;
         border-radius: 8px;
@@ -193,6 +201,15 @@
     }
     .m__submenu li a {
         font-weight: 300;
+    }
+    .mobile_member_info {
+        border: 1px solid #fff;
+    }
+}
+
+@media (max-width: 800px) {
+    #header .header__login a.header__member {
+        display: none;
     }
 }
 

@@ -1,8 +1,8 @@
 <header id="header">
-    <h1><a href="#"><img src="../assets/img/logo.png" alt="지구ON 로고"></a></h1>
+    <h1><a href="../main/main.php"><img src="../assets/img/logo.png" alt="지구ON 로고"></a></h1>
     <nav class="header__nav">
         <ul class="clearfix">
-            <li><a href="#">지구ON 소개</a>
+            <li><a href="">지구ON 소개</a>
                 <ul class="submenu">
                     <li><a href="#">스토리</a></li>
                 </ul>
@@ -25,16 +25,26 @@
                     <li><a href="#">상품 추천</a></li>
                 </ul>
             </li>
-            <li><a href="#">커뮤니티</a>
+            <li><a href="../board/boardStory.php">커뮤니티</a>
                 <ul class="submenu">
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">이야기방</a></li>
+                    <li><a href="../board/boardNotice.php">공지사항</a></li>
+                    <li><a href="../board/boardStory.php">이야기방</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
     <!-- 반응형 전용 -->
     <nav class="mobile__nav">
+        <?php if( isset($_SESSION['myMemberID']) ){ ?>
+        <ul class="mobile__menuWrap">
+            <li><a href="#" class="mobile_member_info"><?=$_SESSION['youName']?>님 환영합니다!</a></li>
+        </ul>
+        <?php } else { ?>
+        <ul class="mobile__menuWrap">
+            <li><a href="../login/join.php" class="mobile_member_info">회원가입 하러가기</a></li>
+        </ul>
+        <?php } ?>
+
         <ul class="mobile__menuWrap">
             <li><a href="#" class="big_menu">지구ON 소개</a>
                 <ul class="m__submenu">
@@ -61,14 +71,19 @@
         <ul class="mobile__menuWrap">
             <li><a href="#" class="big_menu">커뮤니티</a>
                 <ul class="m__submenu">
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">이야기방</a></li>
+                    <li><a href="../board/boardNotice.php">공지사항</a></li>
+                    <li><a href="../board/boardStory.php">이야기방</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
     <div class="header__login">
+    <?php if( isset($_SESSION['myMemberID']) ){?>
+        <a href="#" class="header__member"><?=$_SESSION['youName']?>님 환영합니다!</a>
+        <a href="../login/logout.php">로그아웃</a>
+    <?php } else {?>
         <a href="#">로그인</a>
+    <?php }?>
     </div>
     <div class="header__ham">
         <span></span>

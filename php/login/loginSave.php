@@ -1,3 +1,10 @@
+<?php
+include "../connect/connect.php";
+include "../connect/session.php";
+
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,16 +28,12 @@
 
     <main id="main">
         <section id="banner"> 
-            <h2>로그인 페이지입니다.</h2>
-            <div class="banner__inner2 container">
+            <div class="banner__wrap container">
                 <div class="img">
-                    <img src="../assets/img/banner_img02.svg" alt="배너 이미지">
+                    <img src="../assets/img/board_img01.png" alt="보드 이미지">
                 </div> 
                 <div class="desc">
 <?php
-    include "../connect/connect.php";
-    include "../connect/session.php";
-
     $youEmail = $_POST['youEmail'];
     $youPass = $_POST['youPass'];
 
