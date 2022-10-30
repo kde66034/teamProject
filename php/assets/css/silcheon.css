@@ -1,0 +1,366 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 기후실천 메인페이지 */
+.silcheonMain__wrap > h2 {
+    margin-top: 80px;
+    font-size: 32px;
+    text-align: center;
+}
+.silcheonMain__wrap > p {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    line-height: 1.4;
+}
+
+/* 배너 */
+/* main */
+#main {
+    max-width: 1920px;
+    /* min-width: 480px; */
+    margin: 0 auto;
+    margin-top: 72px;
+}
+
+/* banner */
+#banner {
+    height: 300px;
+    background: #FFFEEB;
+    border-bottom: 15px solid #BED58C;
+}
+
+.banner__wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 100px 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.banner__wrap h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.banner__wrap p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #999;
+}
+
+.banner__wrap img {
+    width: 45%;
+    position: absolute;
+    right: -50px;
+    bottom: 0;
+}
+
+@media (max-width: 1280px) {
+    #banner {
+        height: 260px;
+        border-bottom: 15px solid #BED58C;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap {
+        padding: 80px 70px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap p {
+        font-size: 18px;
+        line-height: 1.6;
+        transition: all 0.2s ease-in;
+    }
+}
+
+@media (max-width: 940px) {
+    #banner {
+        height: 214px;
+        border-bottom: 13px solid #BED58C;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap {
+        padding: 60px 50px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap h2 {
+        font-size: 29px;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap p {
+        font-size: 16px;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap img {
+        width: 41%;
+        transition: all 0.2s ease-in;
+    }
+}
+
+@media (max-width: 768px) {
+    #banner {
+        height: 182px;
+        border-bottom: 10px solid #BED58C;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap {
+        padding: 50px 40px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap h2 {
+        font-size: 22px;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap p {
+        font-size: 14px;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap img {
+        width: 34%;
+        right: -30px;
+        transition: all 0.2s ease-in;
+    }
+}
+
+@media (max-width: 610px) {
+    #banner {
+        height: 120px;
+        border-bottom: 8px solid #BED58C;
+        transition: all 0.1s ease-in;
+    }
+
+    .banner__wrap {
+        padding: 50px 70px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap h2 {
+        font-size: 22px;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap p {
+        display: none;
+    }
+
+    .banner__wrap img {
+        right: 40px;
+        bottom: 18px;
+        transition: all 0.2s ease-in;
+    }
+}
+
+@media (max-width: 480px) {
+    #banner {
+        height: 80px;
+        border-bottom: 8px solid #BED58C;
+        transition: all 0.1s ease-in;
+    }
+
+    .banner__wrap {
+        padding: 30px 70px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .banner__wrap h2 {
+        font-size: 20px;
+        transition: all 0.2s ease-in;
+    }
+}
+
+/* cardType */
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+.card {
+    width: 32%;
+    background: #fff;
+    box-shadow: 3px 3px 10px #dcdcdc;
+    transition: transform 0.3s;
+}
+.card:hover {
+    background: linear-gradient(100deg, #869f30 0%, #82a031 23%, #79a636 49%, #69b03f 67%, #52be4b 100%);
+    transform: translateY(-20px);
+}
+.card:hover a {
+    color: #fff;
+}
+.card:hover > .card__body .btn {
+    color: #fff;
+}
+
+.card__body {
+    padding: 24px;
+}
+.card__body .title {
+    font-size: 22px;
+    padding-bottom: 10px;
+    /* 한 줄 효과 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 30px;    /* 제목 길어져도 한 줄 유지 */
+}
+.card__body .desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    padding-bottom: 20px;
+}
+.card__body .btn {
+    display: block;
+    text-align: right;
+}
+.card__body .btn:hover {
+    text-decoration: underline;
+}
+
+/* 실천 리스트 */
+.silcheon__list {
+    padding-bottom: 100px;
+}
+.silcheon__list details > summary {
+    background: #fff;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 3px 3px 10px #dcdcdc;
+}
+.silcheon__list summary > .num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F7941D;
+    color: #fff;
+    font-family: 'yg-jalnan';
+    font-size: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 1.75rem;
+}
+.silcheon__list summary > .icon {
+    width: 4rem;
+    height: 4rem;
+    padding: 0.5rem;
+}
+.silcheon__list summary > .title {
+    flex-basis: 75%;
+    font-size: 1.4rem;
+    font-family: 'yg-jalnan';
+}
+.silcheon__list summary > .btn {
+    position: relative;
+    display: inline-block;
+    font-family: 'yg-jalnan';
+    box-sizing: border-box;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3rem;
+    font-size: 1.1rem;
+    border: 0.35rem solid #F7941D;
+    color: #F7941D;
+    border-radius: 2rem;
+    text-align: center;
+    transition: all 0.2s ease-out 0s;
+    cursor: pointer;
+}
+.silcheon__list summary > .btn:hover {
+    background: #F7941D;
+    color: #fff;
+}
+.silcheon__list details > .desc {
+    background: #fff;
+    padding: 2rem 3rem;
+    margin-top: 0.5rem;
+    border-radius: 5rem;
+    box-shadow: 3px 3px 10px #dcdcdc;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+    .silcheon__list summary > .title {
+        flex-basis: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    .silcheonMain__wrap > h2 {
+        margin-top: 0px;
+        padding: 40px 0 16px 0;
+        box-sizing: border-box;
+        font-size: 21px;
+    }
+    .silcheonMain__wrap > p {
+        font-size: 16px;
+        padding: 0 20px;
+        margin-bottom: 40px;
+        line-height: 1.6;
+    }
+    .silcheon__list details > summary {
+        flex-wrap: nowrap;
+    }
+    .silcheon__list summary > .num {
+        font-size: 1.3rem;
+    }
+    .silcheon__list summary > .icon {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+    .silcheon__list summary > .title {
+        flex-basis: 60%;
+        font-size: 1.2rem;
+    }
+    .silcheon__list details > .desc {
+        font-size: 1rem;
+
+    }
+    .silcheon__list summary > .btn {
+        display: none;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .card:hover {
+        transform: none;
+    }
+}

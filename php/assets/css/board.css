@@ -294,8 +294,10 @@
 
 .board__pages ul li.active a {
     display: inline-block;
-    border: 1px solid #006241;
-    color: #006241;
+    /* border: 1px solid #006241; */
+    background-color: #006241;
+    color: #fff;
+    /* color: #006241; */
     font-size: 12px;
     font-weight: 500;
     padding: 10px 12px;
@@ -768,4 +770,96 @@ table {
     color: #006241;
     background: #fff;
     border: 2px solid #006241;
+}
+
+/* 댓글 */
+.board__contents__comment > h3 {
+    margin-bottom: 30px;
+}
+.comment__title h3 {
+    font-size: 24px;
+}
+.comment {
+    margin-bottom: 20px;
+}
+.comment__view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background: #f0f6f8;
+    border-radius: 50px;
+    padding: 15px;
+}
+.comment__view__img {
+    width: 10%;
+}
+.comment__view__img > img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.comment__view__data {
+    width: 20%;
+    padding-bottom: 5px;
+    font-weight: 300;
+}
+.comment__view__data > .name {
+    font-weight: normal;
+    font-size: 16px !important;
+}
+.comment__view__data > .name, .comment__view__data > .date {
+    display: block;
+}
+.comment__view__msg {
+    width: 70%;
+    line-height: 1.4;
+    padding-right: 10px;
+}
+.comment__del {
+    text-align: right;
+    margin-top: 0px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-right: 5px;
+}
+.comment__del a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.comment__write {
+    padding: 20px;
+    background: #f0f6f8;
+    border-top: 3px solid #999;
+    border-bottom: 3px solid #999;
+    margin-bottom: 100px;
+}
+.comment__write label {
+    display: none;
+}
+.comment__write input {
+    border: 0;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+.comment__write button {
+    border: 0;
+    background: #41464e;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.comment__write__info {
+    display: flex;
+    justify-content: space-between;
+}
+.comment__write__info > * {
+    width: 32%;
+    box-sizing: border-box;
+}
+.comment__write__msg > input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 15px;
 }

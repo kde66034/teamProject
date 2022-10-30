@@ -73,7 +73,7 @@
     border: 1px solid #006241;
     border-radius: 50px;
     color: #006241;
-    padding: 8px 30px;
+    padding: 8px 20px;
     transition: all 0.3s ease;
 }
 
@@ -87,7 +87,7 @@
     border-radius: 50px;
     background: #006241;
     color: #fff;
-    padding: 8px 30px;
+    padding: 8px 20px;
 }
 
 /* header ham */
@@ -173,6 +173,9 @@
         /* text-align: right; */
         transition: right 0.4s ease-in;
         font-size: 16px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        white-space: nowrap;
     }
     .mobile__nav ul li {
         display: block;
@@ -198,6 +201,9 @@
     }
     .mobile__menuWrap {
         margin-bottom: 50px;
+    }
+    .mobile__menuWrap:last-child {
+        margin-bottom: 120px;
     }
     .m__submenu li a {
         font-weight: 300;

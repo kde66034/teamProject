@@ -12,7 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>지구ON 커뮤니티 이야기방</title>
 
-    <?php include "../include/link.php" ?>
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/board.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
     <div id="skip">
@@ -97,11 +104,11 @@
             for($i=1; $i <= $count; $i++){
                 $info = $result -> fetch_array(MYSQLI_ASSOC);
                 echo "<tr>";
-                echo "<td>".$info['myBoardID']."</td>";
-                echo "<td><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</td>";
-                echo "<td>".$info['youName']."</td>";
-                echo "<td>".date('Y-m-d',$info['regTime'])."</td>";
-                echo "<td>".$info['boardView']."</td>";
+                echo "<td data-table='num'>".$info['myBoardID']."</td>";
+                echo "<td data-table='subject'><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</td>";
+                echo "<td data-table='write'>".$info['youName']."</td>";
+                echo "<td data-table='date'>".date('Y-m-d',$info['regTime'])."</td>";
+                echo "<td data-table='views'>".$info['boardView']."</td>";
                 echo "</tr>";
             }
         }else{

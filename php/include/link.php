@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="../assets/css/reset.css">
 <link rel="stylesheet" href="../assets/css/header.css">
 <link rel="stylesheet" href="../assets/css/board.css">
+<link rel="stylesheet" href="../assets/css/news.css">
 <link rel="stylesheet" href="../assets/css/join.css">
 <link rel="stylesheet" href="../assets/css/login.css">
 <link rel="stylesheet" href="../assets/css/myPage.css">

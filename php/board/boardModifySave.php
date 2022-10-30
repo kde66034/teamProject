@@ -3,9 +3,8 @@
     include "../connect/session.php";
     include "../connect/sessionCheck.php";
 ?>
-
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,16 +28,18 @@
 
     $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
 
+    //서버에 있는 유패스memberInfo['youPass']랑 우리 유패스랑 같은지
     if($memberInfo['youPass'] === $youPass && $memberInfo['myMemberID'] === $myMemberID){
         $sql = "UPDATE myBoard SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE myBoardID = '{$myBoardID}'";
         $connect -> query($sql);
-    } else {
-        echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 한 번 확인해주세요.')</script>";
+    }else {
+        echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 한번 확인해주세요!')</script>";
     }
 ?>
 <script>
-    location.href = "boardStory.php";
+    location.href="boardStory.php";
 </script>
+
 
 </body>
 </html>

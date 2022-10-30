@@ -36,9 +36,26 @@
     color: #fff;
     padding-right: 10px;
 }
+#footer .foot ul li a:hover {
+    text-decoration: underline;
+}
 
 #footer .foot address {
     font-style: normal;
     color: #fff;
     line-height: 1.4;
+}
+
+/* 반응형 */
+@media (max-width: 800px) {
+    #footer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    #footer h2 img {
+        width: 120px;
+    }
+    #footer .foot ul li a, #footer .foot address {
+        font-size: 14px;
+    }
 }

@@ -540,6 +540,10 @@
     font-size: 1.2rem;
   }
   .login__footer .btn a {
-    width: auto;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 0.5em 0.2em;
+    border: 1px solid #006241;
+
   }
 }

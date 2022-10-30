@@ -172,7 +172,7 @@
                 </p>
                 <div class="result__btn">
                     <div class="result__btn__img">
-                        <a href="#">지구 ON 홈으로</a>
+                        <a href="../main/main.php">지구 ON 홈으로</a>
                     </div>
                     <div class="result__btn__img">
                         <a href="#" class="resultbtn2">마이 페이지로</a>
@@ -185,12 +185,10 @@
     </main>
     <!-- //main -->
 
-    <?php include "../include/footer.php" ?>
-    <!-- //footer -->
-
-    <!-- script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../assets/js/custom.js"></script>
-    <script src="../assets/js/header.js"></script>
+    <?php include "login.php" ?>
+    <!-- //login -->
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../assets/js/custom.js"></script>
+<script src="../assets/js/header.js"></script>
 </html>

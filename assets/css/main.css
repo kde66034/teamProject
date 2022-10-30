@@ -1,0 +1,675 @@
+#header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+    /* background-color: #006241; */
+    color: rgba(255, 255, 255, 0.7);
+    padding: 20px 0;
+}
+
+#header.navbar-shrink {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
+#header h1 img {
+    margin-left: 20px;
+    width: 140px;
+}
+
+#header h2 img {
+    display: none;
+}
+
+#header.navbar-shrink h1 img {
+    display: none;
+}
+
+#header.navbar-shrink h2 img {
+    display: flex;
+    margin-left: 20px;
+    width: 140px;
+}
+
+/* header ham */
+.header__ham {
+    position: absolute;
+    right: 90px;
+    top: 12px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.header__ham span {
+    display: block;
+    background: #fff;
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.25s margin 0.25s, 0.25s transform;
+    /* margin에 딜레이 */
+}
+
+#header.navbar-shrink .header__ham span {
+    background: #006241;
+}
+
+.header__ham span:nth-child(1) {
+    margin-top: 18px;
+}
+
+.header__ham.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+    /* transform에 딜레이 */
+}
+
+.header__ham.active span:nth-child(1) {
+    margin-top: 25px;
+    margin-bottom: -7px;
+    transform: rotate(45deg);
+}
+
+.header__ham.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.header__ham.active span:nth-child(3) {
+    transform: rotate(135deg);
+    margin-top: -2px;
+}
+
+.menu__text {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#header.navbar-shrink .menu__text {
+    color: #006241;
+}
+
+/* main */
+#main {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* 메뉴 */
+.mainpage__nav {
+    display: block;
+    position: fixed;
+    right: -100%;
+    top: 69px;
+    background: #006241;
+    width: 60%;
+    height: 100vh;
+    padding: 20px;
+    /* text-align: right; */
+    transition: right 0.4s ease-in;
+    font-size: 16px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+.mainpage__nav ul li {
+    display: block;
+    margin: 20px;
+}
+
+.mainpage__nav ul li a {
+    padding: 10px;
+    white-space: nowrap;
+    color: #fff;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.mainpage__nav ul li a:hover {
+    background: #fff;
+    border-radius: 8px;
+    color: #006241;
+}
+
+.mainpage__nav ul li a.big_menu {
+    font-size: 20px;
+}
+
+.mainpage__nav.active {
+    right: 0;
+}
+
+.mainpage__menuWrap {
+    margin-bottom: 50px;
+}
+
+.mainpage__menuWrap:last-child {
+    margin-bottom: 120px;
+}
+
+.m__submenu li a {
+    font-weight: 300;
+}
+
+/* 반응형 */
+@media (max-width: 1300px) {
+    #header {}
+
+    #header .header__login {
+        margin-right: 72px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header__login {
+        width: 30%;
+    }
+
+    .header__login a {
+        padding: 8px 20px;
+    }
+}
+
+/* main */
+#main__top {
+    width: 100%;
+    height: 1080px;
+    background: url(../img/earthON_main03.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+}
+
+#main__top::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#main__wrap {
+    display: block;
+    height: 100vh;
+    min-height: 40rem;
+    padding-top: 4.5rem;
+    padding-bottom: 0;
+}
+
+.main__title {
+    font-size: 6rem;
+    color: #fff;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    line-height: 1.4;
+}
+
+.main__desc {
+    margin-top: 40px;
+    font-size: 1.6rem;
+    color: #fff;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    line-height: 1.6;
+}
+
+.main__btn {
+    margin: 100px 0 70px 0;
+    display: flex;
+    justify-content: space-between;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+}
+
+.main__btn a {
+    color: #fff;
+    padding: 10px 15px;
+    width: 29%;
+    font-size: 1.5em;
+    border-bottom: 2px solid #fff;
+}
+
+/* mainCard */
+body {
+    background-color: #007853;
+}
+
+.card__wrap {
+    margin: 120px 0;
+}
+
+.card__first,
+.card__second,
+.card__third {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 34px;
+}
+
+.card__first .bg1:hover {
+    background: url(../img/main_card01.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__first .bg2:hover {
+    background: url(../img/main_card02.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__first .bg3:hover {
+    background: url(../img/main_card03.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__second .bg4:hover {
+    background: url(../img/main_card04.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__second .bg5:hover {
+    background: url(../img/main_card05.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__second .bg6:hover {
+    background: url(../img/main_card06.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__third .bg7:hover {
+    background: url(../img/main_card07.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__third .bg8:hover {
+    background: url(../img/main_card08.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__third .bg9:hover {
+    background: url(../img/main_card09.jpg) no-repeat;
+    background-size: cover;
+    transform: scale(1.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.card__first .bg1:not(:hover),
+.card__first .bg2:not(:hover),
+.card__first .bg3:not(:hover),
+.card__second .bg4:not(:hover),
+.card__second .bg5:not(:hover),
+.card__second .bg6:not(:hover),
+.card__third .bg7:not(:hover),
+.card__third .bg8:not(:hover),
+.card__third .bg9:not(:hover) {
+    transition: all 0.25s ease-in-out;
+}
+
+.card__first .card__cont {
+    background: #00553E;
+}
+
+.card__second .card__cont {
+    background: #003627;
+}
+
+.card__third .card__cont {
+    background: #001D15;
+}
+
+.card__cont {
+    width: 31%;
+    height: 270px;
+    border-radius: 0 0 50px 0;
+    padding: 35px 45px;
+    box-sizing: border-box;
+}
+
+.card__cont h3 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.card__cont .total {
+    font-size: 34px;
+    font-weight: 500;
+    color: #00FF85;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.card__cont .total em {
+    font-size: 20px;
+    color: #C9C9C9;
+    font-weight: 200;
+}
+
+.card__cont .refer {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.card__cont:hover h3,
+.card__cont:hover .total em,
+.card__cont:hover .refer {
+    color: #000;
+    font-weight: bold;
+}
+
+.card__cont:hover .total {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+@media (max-width: 1230px) {
+    .card__cont {
+        height: 240px;
+        padding: 28px 30px;
+        box-sizing: border-box;
+    }
+
+    .card__cont h3 {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+
+    .card__cont .total {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .card__cont .total em {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 905px) {
+    .card__cont {
+        height: 220px;
+    }
+
+    .card__cont h3 {
+        font-size: 20px;
+        margin-bottom: 26px;
+    }
+
+    .card__cont .total {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .card__cont .total em {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card__cont {
+        height: 180px;
+        padding: 16px 20px;
+        box-sizing: border-box;
+    }
+
+    .card__cont h3 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .card__cont .total {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .card__cont .total em {
+        font-size: 12px;
+    }
+
+    .card__cont .refer {
+        font-size: 12px;
+        font-weight: lighter;
+    }
+}
+
+@media (max-width: 630px) {
+
+    .card__wrap .bg1,
+    .card__wrap .bg4,
+    .card__wrap .bg7 {
+        display: none;
+    }
+
+    .card__cont {
+        width: 47%;
+        padding: 24px 30px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 460px) {
+    .card__wrap {
+        margin: 70px 50px;
+    }
+
+    .card__wrap .bg2,
+    .card__wrap .bg5,
+    .card__wrap .bg8 {
+        display: none;
+    }
+
+    .card__cont {
+        width: 100%;
+        padding: 24px 26px;
+        box-sizing: border-box;
+    }
+}
+
+/* mainBanner */
+#mainBanner {
+    background-attachment: fixed;
+    background-image: url(../img/earthON_main03_02.jpg);
+    background-size: cover;
+    color: white;
+    font-size: 26px !important;
+    height: 800px;
+    width: 100%;
+    /* z-index : 999; */
+}
+
+.banner {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 230px;
+}
+
+.banner>h2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    text-transform: capitalize;
+}
+
+.banner>p {
+    font-size: 30px;
+    line-height: 2;
+    font-weight: 400;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    text-transform: capitalize;
+}
+
+/* 개별적으로 나타나게 하기 */
+.banner .b_title {
+    opacity: 0;
+    /* 밑에서 위로 올라오는 효과 */
+    transform: translateY(70px);
+    transition: all 2s 0.1s cubic-bezier(0, 0.38, 0.21, 0.99);
+}
+
+.banner.show .b_title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner .b_desc1 {
+    opacity: 0;
+    /* 밑에서 위로 올라오는 효과 */
+    transform: translateY(70px);
+    transition: all 2s 0.4s cubic-bezier(0, 0.38, 0.21, 0.99);
+}
+
+.banner.show .b_desc1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner .b_desc2 {
+    opacity: 0;
+    /* 밑에서 위로 올라오는 효과 */
+    transform: translateY(70px);
+    transition: all 2s 0.6s cubic-bezier(0, 0.38, 0.21, 0.99);
+}
+
+.banner.show .b_desc2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner .b_desc3 {
+    opacity: 0;
+    /* 밑에서 위로 올라오는 효과 */
+    transform: translateY(70px);
+    transition: all 2s 0.8s cubic-bezier(0, 0.38, 0.21, 0.99);
+}
+
+.banner.show .b_desc3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: px) {}
+
+/* subcard */
+#subcardWrap {
+    width: 100%;
+    height: 1080px;
+    background-color: #006241;
+    position: relative;
+}
+
+#subcardWrap .subcard__inner {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#subcardWrap .subcard__inner .subcard {
+    width: 23%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.subcard:before {
+    content: “”;
+    display: block;
+    /* padding-bottom: 150%; */
+    width: 100%;
+}
+
+.subcard__background {
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    bottom: 0;
+    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: center;
+    transform: scale(1) translateZ(0);
+    transition: filter 200ms linear, transform 200ms linear;
+}
+
+.subcard:hover .subcard__background {
+    transform: scale(1.05) translateZ(0);
+}
+
+.subcard__inner:hover>.subcard:not(:hover) .subcard__background {
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.subcard__contents {
+    left: 0;
+    padding: 24px;
+    position: absolute;
+    top: 0;
+}
+
+.subcard__contents>h4 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.subcard__contents>p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    line-height: 1.4;
+    word-spacing: 100vw;
+}
+
+.subcard__inner>div {}
+
+.subcard__inner h4 {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.subcard__inner a {
+    display: block;
+    font-size: 16px;
+    margin-top: 220px;
+    text-align: center;
+}

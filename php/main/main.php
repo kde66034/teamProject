@@ -2,21 +2,26 @@
     include "../connect/connect.php";
     include "../connect/session.php";
 
-    echo "<pre>";
-    var_dump($_SESSION);
-    echo "</pre>";
+    // echo "<pre>";
+    // var_dump($_SESSION);
+    // echo "</pre>";
 ?> 
 
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지구ON 커뮤니티</title>
 
-    <?php include "../include/link.php" ?>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>지구ON</title>
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/css/reset.css" />
+  <link rel="stylesheet" href="../assets/css/common.css" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
 </head>
+
 <body>
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
@@ -25,172 +30,224 @@
     </div>
     <!-- //skip -->
 
-    <?php include "../include/header.php" ?>
+    <?php include "../include/header02.php" ?>
     <!-- //header -->
 
     <main id="main">
-        <section id="banner">
-            <div class="banner__wrap">
-                <h2>가짜 게시판</h2>
-                <p>아직 메인 페이지를 완성하지 못해 부득이하게 게시판 HTML만 복붙했습니다. <br> 
-                    진짜 게시판으로 가시고 싶으시면 헤더의 커뮤니티를 클릭하여 가주시기 바랍니다.
-                </p>
-                <img src="../assets/img/board_img01.png" alt="커뮤니티 이미지">
+    <section id="main__top">
+      <div class="main__wrap container">
+        <h2 class="main__title">
+          A Right Move <br />
+          to Earth
+        </h2>
+        <p class="main__desc">
+          기후 위기 대응을 위한 지구ON, <br />
+          기후 위기의 실체와 대응 실천 방법을 제공하여 미래 환경을
+          변화시킵니다.
+        </p>
+        <div class="main__btn">
+          <a href="#mainCard">risk</a>
+          <a href="#mainBanner">purpose</a>
+          <a href="#">solution</a>
+        </div>
+      </div>
+    </section>
+    <!-- // -->
+    <section id="mainCard" class="container">
+      <h2 class="blind">오염 및 피해 현황</h2>
+      <div class="card__wrap">
+        <div class="card__first">
+          <div class="card__cont bg1">
+            <h3>폐기물 <br />발생량</h3>
+            <p class="total">534,055 <em>톤 /일</em></p>
+            <p class="refer">
+              # 전년 대비 약 7.4% 증가 <br />
+              # 우리나라 (2020)
+            </p>
+          </div>
+          <div class="card__cont bg2">
+            <h3>화학물질 <br />배출량</h3>
+            <p class="total">53,732 <em>톤 /년</em></p>
+            <p class="refer">
+              # 전년 대비 약 4.5% 감소 <br />
+              # 우리나라 (2020)
+            </p>
+          </div>
+          <div class="card__cont bg3">
+            <h3>온실가스 <br />배출량</h3>
+            <p class="total">701 <em>만 톤/년</em></p>
+            <p class="refer">
+              # 전년 대비 약 9.3% 증가 <br />
+              # 우리나라 (2020)
+            </p>
+          </div>
+        </div>
+        <!-- //card__first -->
+        <div class="card__second">
+          <div class="card__cont bg4">
+            <h3>미세먼지(PM2.5) <br />농도</h3>
+            <p class="total">21 <em>㎍/㎥</em></p>
+            <p class="refer">
+              # 전년 대비 약 16% 감소 <br />
+              # 서울 (2020)
+            </p>
+          </div>
+          <div class="card__cont bg5">
+            <h3>한파, 고온현상의 <br />기온 변동폭</h3>
+            <p class="total">19.7 <em>°C</em></p>
+            <p class="refer">
+              # 역대 최고 기록 <br />
+              # 우리나라 (21년 1월)
+            </p>
+          </div>
+          <div class="card__cont bg6">
+            <h3>평균 기온 및 <br />개화시기 변화</h3>
+            <p class="total">
+              8.7 <em>°C</em> <span>3.24</span> <em>월.일</em>
+            </p>
+            <p class="refer">
+              # 역대 최고 기록 <br />
+              # 우리나라 (21년 3월)
+            </p>
+          </div>
+        </div>
+        <!-- //card__second -->
+        <div class="card__third">
+          <div class="card__cont bg7">
+            <h3>월별 극도의 <br />폭염 발생 증가율</h3>
+            <p class="total">90 <em>배 증가</em></p>
+            <p class="refer">
+              # 1951~1980년 대비 <br />
+              # 전 세계 (2021)
+            </p>
+          </div>
+          <div class="card__cont bg8">
+            <h3>우리나라 <br />자연재해 피해액</h3>
+            <p class="total">1,318 <em>십억 원</em></p>
+            <p class="refer">
+              # 전년 대비 512% 증가 <br />
+              # 우리나라 (2020)
+            </p>
+          </div>
+          <div class="card__cont bg9">
+            <h3>전 세계 <br />자연재해 피해액</h3>
+            <p class="total">
+              20 <em>조</em> <span>2906</span> <em>억원</em>
+            </p>
+            <p class="refer">
+              # 평균 대비 4.7% 증가 <br />
+              # 세계 (2022)
+            </p>
+          </div>
+        </div>
+        <!-- //card__third -->
+      </div>
+    </section>
+    <!-- //mainCard -->
+    <section id="mainBanner" class="mainBanner">
+      <div class="banner">
+        <h2 class="b_title">지구 ON</h2>
+        <p class="b_desc1">자유롭고 안전하게 살아갈 권리,<br /></p>
+        <p class="b_desc2">
+          생명에 대한 권리를 지키기 위해 존재합니다.<br />
+        </p>
+        <p class="b_desc3">기후 위기 대응을 위한 실천에 함께 해주세요.</p>
+      </div>
+    </section>
+    <!-- //"mainBanner" -->
+    <section class="hero-section">
+      <div class="card-grid">
+        <a class="card" href="../news/newsMain.php">
+          <div class="card__background" style="background-image: url(../assets/img/bulb.png)">
+          </div>
+          <div class="card__content">
+            <p class="card__category">Issues</p>
+            <h3 class="card__heading">기후 소식</h3>
+          </div>
+        </a>
+        <a class="card" href="../gihusilcheon/silcheonMain.php">
+          <div class="card__background" style="background-image: url(../assets/img/calendar.png)">
+          </div>
+          <div class="card__content">
+            <p class="card__category">Action</p>
+            <h3 class="card__heading">기후 실천</h3>
+          </div>
+        </a>
+        <a class="card" href="../zerowaste/zerowasteMain.php">
+          <div class="card__background" style="background-image: url(../assets/img/heart.png)">
+          </div>
+          <div class="card__content">
+            <p class="card__category">Recommend</p>
+            <h3 class="card__heading">제로웨이스트 상품</h3>
+          </div>
+          </li>
+          <a class="card" href="../gihusilcheon/silcheonQuiz.php">
+            <div class="card__background" style="background-image: url(../assets/img/target.png)">
             </div>
-        </section>
-        <!-- //banner -->
-
-        <section id="board" class="container">
-            <h2>이야기방</h2>
-            <div class="board__inner">
-                <div class="board__num">
-                    <p>※ 총 <em>1215</em>건의 이야기가 있습니다.</p>
-                </div>
-                <div class="Story__table">
-                    <table>
-                        <colgroup>
-                            <col style="width: 5%">
-                            <col>
-                            <col style="width: 12%">
-                            <col style="width: 12%">
-                            <col style="width: 8%">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>작성일</th>
-                                <th>조회수</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-table="num">1</td>
-                                <td data-table="subject"><a href="#">푸른 숲을 위한 캠페인에 동참해 주세요~! (아마존 숲 보존을 위한 캠페인 참여)</a></td>
-                                <td data-table="write">지구사랑 52</td>
-                                <td data-table="date">2022-10-08</td>
-                                <td data-table="views">38</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">2</td>
-                                <td data-table="subject"><a href="#">제로콜라로 지구를 구하는 방법에 대해 알려드립니다 😊😊</a></td>
-                                <td data-table="write">제로 콜라 87</td>
-                                <td data-table="date">2022-10-03</td>
-                                <td data-table="views">66</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">3</td>
-                                <td data-table="subject"><a href="#">고속도로에서 죽어나가는 고라니들을 보호해주세요!! 엣취!!😣</a></td>
-                                <td data-table="write">고라니 재채기2</td>
-                                <td data-table="date">2022-09-27</td>
-                                <td data-table="views">105</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">4</td>
-                                <td data-table="subject"><a href="#">푸른 숲을 위한 캠페인에 동참해주시면 꼬북이 워터렌즈를 이벤트로 드립니다!</a></td>
-                                <td data-table="write">꼬북이 워터렌즈</td>
-                                <td data-table="date">2022-09-22</td>
-                                <td data-table="views">294</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">5</td>
-                                <td data-table="subject"><a href="#">지구사랑곽두팔님이 나가신다</a></td>
-                                <td data-table="write">지구사랑곽두팔</td>
-                                <td data-table="date">2022-09-17</td>
-                                <td data-table="views">526</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">6</td>
-                                <td data-table="subject"><a href="#">우주최고헬창 헬스보이 업업 인사드립니다^^7</a></td>
-                                <td data-table="write">헬스보이 업업</td>
-                                <td data-table="date">2022-09-16</td>
-                                <td data-table="views">462</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">7</td>
-                                <td data-table="subject"><a href="#">웹뽀~이 오늘부터 환경운동가가 되겠습니다 뽀~이♂</a></td>
-                                <td data-table="write">웹보이♂BOY</td>
-                                <td data-table="date">2022-09-12</td>
-                                <td data-table="views">573</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">8</td>
-                                <td data-table="subject"><a href="#">웹GIRL~ 오늘부터 환경운동가가 되겠습니다 GIRL~♀</a></td>
-                                <td data-table="write">웹걸♀GIRL</td>
-                                <td data-table="date">2022-09-08</td>
-                                <td data-table="views">483</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">9</td>
-                                <td data-table="subject"><a href="#">패스트 푸드점에서 빨대를 제공하지 않게 된 점이 너무 좋은 것 같네요..!</a></td>
-                                <td data-table="write">김춘배</td>
-                                <td data-table="date">2022-09-01</td>
-                                <td data-table="views">396</td>
-                            </tr>
-                            <tr>
-                                <td data-table="num">10</td>
-                                <td data-table="subject"><a href="#">지구온 베스트 품목 공동구매합니다! 함께 하실 분 모집합니다^^</a></td>
-                                <td data-table="write">지구사랑곽두팔</td>
-                                <td data-table="date">2022-08-22</td>
-                                <td data-table="views">263</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- //board__table -->
-                
-                <div class="board__search">
-                    <div class="left">
-                        <form action="boardSearch.php" name="boardSearch" method="get">
-                            <fieldset>
-                                <select name="searchOption" id="searchOption">
-                                    <option value="title">전체</option>
-                                    <option value="title">제목</option>
-                                    <option value="title">작성자</option>
-                                </select>
-                                <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력해주세요!" aria-label="search" required>
-                                <button type="submit" class="searchBtn">검색</button>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <div class="right">
-                        <a href="boardWrite.php" class="btn">글쓰기</a>
-                    </div>
-                </div>
-                <!-- //board__search -->
-                <div class="board__pages">
-                    <ul>
-                        <li><a href="#">처음으로</a></li>
-                        <li><a href="#">&lt;&lt;</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">&gt;&gt;</a></li>
-                        <li><a href="#">마지막으로</a></li>
-                    </ul>
-                </div>
-                <!-- //board__pages -->
+            <div class="card__content">
+              <p class="card__category">Quiz</p>
+              <h3 class="card__heading">기후 퀴즈</h3>
             </div>
-            <!-- //board__inner -->
-        </section>
-        <!-- //board -->
+          </a>
+          <div>
+    </section>
+    <!-- //subcard -->
     </main>
     <!-- //main -->
 
+    <div id="earthON__top">
+      <div>
+        <p>TOP</p>
+      </div> 
+    </div>
+    <!-- //earthON__top -->
+
     <?php include "../include/footer.php" ?>
-    <!-- //footer -->
+    <!-- footer -->
 
-    <?php include "../login/login.php" ?>
-    <!-- //login -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+  <script src="../assets/js/header02.js"></script>
+  <script>
+    const Ban = document.querySelector(".banner");
+    function scroll() {
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        window.screenY;
+      document.querySelectorAll(".banner").forEach((item) => {
+        // 각 섹션의 탑값에서 윈도우 하이트값을 뺀 값보다 컸을 때 window.innerHeight값만 쓰면 너무 빨리 나와서 나누기 2
+        if (scrollTop > item.offsetTop - window.innerHeight / 2) {
+          Ban.classList.add("show");
+        }
+      });
+      //1초에 60번 실행 //자기 호출
+      requestAnimationFrame(scroll);
+      //scroll() : 위에 넣어줬음
+    }
+    scroll();
+    $("#main__top").ripples({
+      resolution: 900,
+      dropRadius: 10,
+      perturbance: 0.02,
+    });
 
-    <!-- script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../assets/js/custom.js"></script>
-    <script src="../assets/js/header.js"></script>
+    // top 버튼
+    // 스크롤 내리면 top버튼 올라오게하기
+    window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
+    //(문서 전체 높이 - 브라우저 높이)
+    if(scrollTop >= (document.body.scrollHeight-window.innerHeight-300)){
+        document.querySelector("#earthON__top > div").classList.add("show");
+    } else {
+        document.querySelector("#earthON__top > div").classList.remove("show")
+    }
+    //top 버튼
+      document.querySelector("#earthON__top > div").addEventListener("click", ()=>{
+          window.scrollTo({left:0, top: 0, behavior: "smooth"});
+      });
+    });
+  </script>
 </body>
+
 </html>

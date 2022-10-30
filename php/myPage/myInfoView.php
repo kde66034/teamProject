@@ -1,0 +1,162 @@
+<?php
+    include "../connect/connect.php";
+    include "../connect/session.php";
+    include "../connect/sessionCheck.php";
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이 페이지</title>
+
+    <?php include "../include/link.php" ?>
+</head>
+
+<body>
+    <?php include "../include/header.php" ?>
+    <!-- //header -->
+
+    <section id="myInfoView">
+        <h2>마이페이지</h2>
+        <div class="myBannerImg"></div>
+        <div class="myInfoView__wrap container">
+            <div class="myInfo__leftCont">
+                <div class="myInfo__cont">
+                    <div class="myInfo__img__box">
+                        <img src="../assets/img/personal_view.png" alt="내 이미지">
+                    </div>
+                    
+                    <h3>오란씨</h3>
+                    <div class="cont__desc">
+                        <div>
+                            지구와 함께 한,
+                        </div>
+                        <div class="cont__desc__end">
+                            <div class="walkIcon"></div>
+                            <p>10</p> 걸음
+                        </div>
+                    </div>
+                </div>
+                <!-- //myInfo__cont -->
+    
+                <div class="myInfo__icon">
+                    <a href="#" class="icon__box"><img src="../assets/img/book_icon.png" alt="실천 일기 아이콘"><p>실천 일기</p></a>
+                    <a href="#" class="icon__box"><img src="../assets/img/heart_icon.png" alt="관심 목록 아이콘"><p>관심 목록</p></a>
+                    <a href="#" class="icon__box"><img src="../assets/img/quiz_icon.png" alt="기후 실천 퀴즈 아이콘"><p>기후 실천 퀴즈</p></a>
+                    <a href="editInfo.html" class="icon__box"><img src="../assets/img/setting_icon.png" alt="내 정보 수정 아이콘"><p>내 정보 수정</p></a>
+                </div>
+                <!-- //myInfo__icon -->
+            </div>
+            <!-- //myInfo__leftCont -->
+
+            <div class="myInfo__rightCont">
+                <div class="myInfo__practice">
+                    <h3>나의 기후실천 발자국</h3>
+                    <div class="practice__inner">
+                        <figure>
+                            <img src="../assets/img/myPage_img01.jpg" alt="실천 일기">
+                            <a href="#">실천 일기 <em>4</em> 회</a>
+                        </figure>
+                        <figure>
+                            <img src="../assets/img/myPage_img01.jpg" alt="기후 실천 퀴즈">
+                            <a href="#">기후실천 퀴즈 <em>3</em> 회</a>
+                        </figure>
+                        <figure>
+                            <img src="../assets/img/myPage_img01.jpg" alt="제로웨이스트">
+                            <a href="#">제로웨이스트 <em>3</em> 회</a>
+                        </figure>
+                    </div>
+                </div>
+                <!-- //myInfo__practice -->
+
+                <div id="myInfo__diary" class="myInfo__diary">
+                    <h3>실천 일기</h3>
+                    <table class="diary__table">
+                        <tbody>
+                            <tr>
+                                <td>[ 2022-10-20 ]</td>
+                                <td>
+                                    <a href="#">물을 받아서 머리 감기</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>[ 2022-10-21 ]</td>
+                                <td>
+                                    <a href="#">사용하지 않는 콘센트 코드 뽑아두기</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>[ 2022-10-22 ]</td>
+                                <td>
+                                    <a href="#">가까운 거리는 걸어서 이동하기</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>[ 2022-10-23 ]</td>
+                                <td>
+                                    <a href="#">음식 남기지 않고 먹을 만큼만 덜어먹기</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //myInfo__diary -->
+
+                <div id="myInfo__quiz" class="myInfo__quiz">
+                    <h3>기후 실천 퀴즈</h3>
+                    <table class="quiz__table">
+                        <tbody>
+                            <tr>
+                                <td>[ 2022-10-18 ]</td>
+                                <td>실천 퀴즈 5회차</td>
+                            </tr>
+                            <tr>
+                                <td>[ 2022-10-19 ]</td>
+                                <td>실천 퀴즈 7회차</td>
+                            </tr>
+                            <tr>
+                                <td>[ 2022-10-20 ]</td>
+                                <td>실천 퀴즈 10회차</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //myInfo__quiz -->
+
+                <div id="myInfo__zeroWaste" class="myInfo__zeroWaste">
+                    <h3>제로 웨이스트</h3>
+                    <table class="zeroWaste__table">
+                        <tbody>
+                            <tr>
+                                <td>[ 2022-09-25 ]</td> 
+                                <td>지구샵 - 칫솔 치약 세트</td>
+                            </tr>
+                            <tr>
+                                <td>[ 2022-10-08 ]</td> 
+                                <td>자연상점 - 천연 샴푸</td>
+                            </tr>
+                            <tr>
+                                <td>[ 2022-10-15 ]</td> 
+                                <td>자연애 - 리사이클링 에코백</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //myInfo__zeroWaste -->
+            </div>
+            <!-- //myInfo__rightCont -->
+        </div>
+        <!-- //myInfoView__wrap -->
+    </section>
+
+    <?php include "../include/footer.php" ?>
+    <!-- //footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/custom.js"></script>
+</body>
+</html>

@@ -78,9 +78,9 @@ if($result){
         for($i=1; $i <= $count; $i++){
             $info = $result -> fetch_array(MYSQLI_ASSOC);
             echo "<tr>";
-            echo "<td>".date('d')."<p>".date('Y/m')."</p></td>";
-            echo "<td><a href='#'>".$info['NoticeTitle']."</a></td>";
-            echo "<td><a href='#'>+</a></td>";
+            echo "<td>".date('d',$info['regTime'])."<p>".date('Y/m',$info['regTime'])."</p></td>";
+            echo "<td><a href='boardNoticeView.php?myNoticeBoardID={$info['myNoticeBoardID']}'>".$info['NoticeTitle']."</a></td>";
+            echo "<td><a href='boardNoticeView.php?myNoticeBoardID={$info['myNoticeBoardID']}'>+</a></td>";
             echo "</tr>";
         }
     } else {
@@ -155,7 +155,7 @@ if($result){
 
                 <div class="board__search">
                     <div class="left">
-                        <form action="boardSearch.php" name="boardSearch" method="get">
+                        <form action="boardNoticeSearch.php" name="boardSearch" method="get">
                             <fieldset>
                                 <select name="searchOption" id="searchOption">
                                     <option value="title">전체</option>
@@ -166,6 +166,9 @@ if($result){
                                 <button type="submit" class="searchBtn">검색</button>
                             </fieldset>
                         </form>
+                    </div>
+                    <div class="right">
+                        <a href="boardNoticeWrite.php" class="btn">글쓰기</a>
                     </div>
                 </div>
                 <!-- //board__search -->
@@ -239,6 +242,9 @@ if($result){
 
     <?php include "../include/footer.php" ?>
     <!-- //footer -->
+
+    <?php include "../login/login.php" ?>
+    <!-- //login -->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../assets/js/header.js"></script>

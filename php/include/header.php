@@ -2,22 +2,22 @@
     <h1><a href="../main/main.php"><img src="../assets/img/logo.png" alt="지구ON 로고"></a></h1>
     <nav class="header__nav">
         <ul class="clearfix">
-            <li><a href="">지구ON 소개</a>
+            <li><a href="../introduce/introduce.php">지구ON 소개</a>
                 <ul class="submenu">
-                    <li><a href="#">스토리</a></li>
+                    <li><a href="../introduce/introduce.php">스토리</a></li>
                 </ul>
             </li>
-            <li><a href="#">기후 소식</a>
+            <li><a href="../news/newsMain.php">기후 소식</a>
                 <ul class="submenu">
-                    <li><a href="#">국내 뉴스</a></li>
-                    <li><a href="#">해외 뉴스</a></li>
-                    <li><a href="#">캠페인 & 이벤트</a></li>
+                    <li><a href="../news/newsCategory.php?category=국내기후뉴스">국내 뉴스</a></li>
+                    <li><a href="../news/newsCategory.php?category=해외기후뉴스">해외 뉴스</a></li>
+                    <li><a href="../news/newsCategory.php?category=캠페인정보">캠페인 정보</a></li>
                 </ul>
             </li>
-            <li><a href="#">기후 실천</a>
+            <li><a href="../gihusilcheon/silcheonMain.php">기후 실천</a>
                 <ul class="submenu">
-                    <li><a href="#">실천 다이어리</a></li>
-                    <li><a href="#">식물 키우기</a></li>
+                    <li><a href="../gihusilcheon/silcheonHow.php">기후 실천 방법</a></li>
+                    <li><a href="../gihusilcheon/silcheonQuiz.php">기후 퀴즈</a></li>
                 </ul>
             </li>
             <li><a href="#">제로웨이스트</a>
@@ -37,7 +37,8 @@
     <nav class="mobile__nav">
         <?php if( isset($_SESSION['myMemberID']) ){ ?>
         <ul class="mobile__menuWrap">
-            <li><a href="#" class="mobile_member_info"><?=$_SESSION['youName']?>님 환영합니다!</a></li>
+            <li><a href="../myPage/PWcheck.php" class="mobile_member_info"><?=$_SESSION['youName']?>님 환영합니다!</a></li>
+            <li><a href="../login/logout.php">로그아웃</a></li>
         </ul>
         <?php } else { ?>
         <ul class="mobile__menuWrap">
@@ -46,18 +47,26 @@
         <?php } ?>
 
         <ul class="mobile__menuWrap">
-            <li><a href="#" class="big_menu">지구ON 소개</a>
+            <li><a href="../introduce/introduce.php" class="big_menu">지구ON 소개</a>
                 <ul class="m__submenu">
-                    <li><a href="#">스토리</a></li>
+                    <li><a href="../introduce/introduce.php">스토리</a></li>
                 </ul>
             </li>
         </ul>
         <ul class="mobile__menuWrap">
-            <li><a href="#" class="big_menu">기후 소식</a>
+            <li><a href="../news/newsMain.php" class="big_menu">기후 소식</a>
                 <ul class="m__submenu">
-                    <li><a href="#">국내 뉴스</a></li>
-                    <li><a href="#">해외 뉴스</a></li>
-                    <li><a href="#">캠페인 & 이벤트</a></li>
+                    <li><a href="../news/newsCategory.php?category=국내기후뉴스">국내 뉴스</a></li>
+                    <li><a href="../news/newsCategory.php?category=해외기후뉴스">해외 뉴스</a></li>
+                    <li><a href="../news/newsCategory.php?category=캠페인정보">캠페인 정보</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="mobile__menuWrap">
+            <li><a href="../gihusilcheon/silcheonMain.php" class="big_menu">기후 실천</a>
+                <ul class="m__submenu">
+                    <li><a href="../gihusilcheon/silcheonHow.php">기후 실천 방법</a></li>
+                    <li><a href="../gihusilcheon/silcheonQuiz.php">기후 퀴즈</a></li>
                 </ul>
             </li>
         </ul>
@@ -69,7 +78,7 @@
             </li>
         </ul>
         <ul class="mobile__menuWrap">
-            <li><a href="#" class="big_menu">커뮤니티</a>
+            <li><a href="../board/boardStory.php" class="big_menu">커뮤니티</a>
                 <ul class="m__submenu">
                     <li><a href="../board/boardNotice.php">공지사항</a></li>
                     <li><a href="../board/boardStory.php">이야기방</a></li>
@@ -79,7 +88,7 @@
     </nav>
     <div class="header__login">
     <?php if( isset($_SESSION['myMemberID']) ){?>
-        <a href="#" class="header__member"><?=$_SESSION['youName']?>님 환영합니다!</a>
+        <a href="../myPage/PWcheck.php" class="header__member"><?=$_SESSION['youName']?>님 환영합니다!</a>
         <a href="../login/logout.php">로그아웃</a>
     <?php } else {?>
         <a href="#">로그인</a>
