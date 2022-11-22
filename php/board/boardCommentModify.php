@@ -9,7 +9,24 @@
     $commentMsg = $_POST['msg'];
     $commentPass = $_POST['pass'];
     $commentID = $_POST['commentID'];
-    $sql = "UPDATE myComment SET commentMsg = '{$commentMsg}', commentPass = '{$commentPass}' WHERE myCommentID = '{$commentID}'";
-    $result = $connect -> query($sql);
-    echo json_encode(array("info" => $commentID));
+    $myMemberID = $_POST['myMemberID'];
+
+    $checkSql = "SELECT * FROM myComment WHERE myCommentID=$commentID and myMemberID=$myMemberID and commentPass='$commentPass'";
+    $checkResult = $connect -> query($checkSql);
+    $count = $checkResult -> num_rows;
+
+    if($count) {
+        $sql = "UPDATE myComment SET commentMsg = '{$commentMsg}', commentPass = '{$commentPass}' WHERE myCommentID = {$commentID}";
+        $result = $connect -> query($sql);
+        $jsonResult = "good";
+    }
+    else {
+        $jsonResult = "bad";
+    }
+
+    echo json_encode(array("info" => $jsonResult));
+
+    // $sql = "UPDATE myComment SET commentMsg = '{$commentMsg}', commentPass = '{$commentPass}' WHERE myCommentID = '{$commentID}'";
+    // $result = $connect -> query($sql);
+    // echo json_encode(array("info" => $commentID));
 ?>

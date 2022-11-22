@@ -1,6 +1,7 @@
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
+    include "../connect/sessionCheck.php";
 ?>
 
 <!DOCTYPE html>
@@ -106,13 +107,25 @@
                     } else {
                         $page = 1;
                     }
+
+                    $viewNum = 10;
+                    $viewLimit = ($viewNum * $page) - $viewNum;
+
                 echo "총 <em>{$newsCount}</em>건의 국내외 기후 소식 및 캠페인 정보들을 만나보세요.";
 ?>
                 </p>
                 <!-- // -->
                 
-<?php
-                $sql = "SELECT * FROM newsBoard WHERE newsDelete = 0 ORDER BY newsID DESC";
+<?php           
+                if(isset($_GET['page'])){
+                    $page = (int)$_GET['page'];
+                    } else {
+                        $page = 1;
+                    }
+                    $viewNum = 10;
+                    $viewLimit = ($viewNum * $page) - $viewNum;
+                
+                $sql = "SELECT * FROM newsBoard WHERE newsDelete = 0 ORDER BY newsID DESC LIMIT {$viewLimit}, {$viewNum}";
                 $result = $connect -> query($sql);
 
                 foreach($result as $news){ ?>
@@ -144,8 +157,9 @@
                         <form action="newsSearch.php" name="newsSearch" method="get">
                             <fieldset>
                                 <select name="searchOption" id="searchOption">
-                                    <option value="title">전체</option>
                                     <option value="title">제목</option>
+                                    <option value="content">내용</option>
+                                    <option value="name">등록자</option>
                                 </select>
                                 <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력해주세요!"
                                     aria-label="search" required>
@@ -166,13 +180,13 @@
     $newsCount = $result -> fetch_array(MYSQLI_ASSOC);
     $newsCount = $newsCount['count(newsID)'];
 
-    if(isset($_GET['page'])){
-        $page = (int)$_GET['page'];
-    } else {
-        $page = 1;
-    }
-    $viewNum = 10;
-    $viewLimit = ($viewNum * $page) - $viewNum;
+    // if(isset($_GET['page'])){
+    //     $page = (int)$_GET['page'];
+    // } else {
+    //     $page = 1;
+    // }
+    // $viewNum = 10;
+    // $viewLimit = ($viewNum * $page) - $viewNum;
     
     // 총 페이지 개수
     $newsCount = ceil($newsCount/$viewNum);
@@ -201,7 +215,7 @@
     if($page != $endPage){
         $nextPage = $page + 1;
         echo "<li><a href='newsMain.php?page={$nextPage}'>다음</a></li>";
-        echo "<li><a href='newsMain.php?page={$boardCount}'>마지막으로</a></li>";
+        echo "<li><a href='newsMain.php?page={$newsCount}'>마지막으로</a></li>";
     }
 ?>
 
@@ -226,6 +240,8 @@
     <!-- //main -->
     <?php include "../include/footer.php" ?>
     <!-- //footer -->
+    <?php include "../login/login.php" ?>
+    <!-- //login -->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../assets/js/custom.js"></script>

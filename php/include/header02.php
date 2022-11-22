@@ -50,9 +50,9 @@
       </ul>
       <ul class="mainpage__menuWrap">
         <li>
-          <a href="#" class="big_menu">제로웨이스트</a>
+          <a href="../zerowaste/zerowasteMain.php" class="big_menu">제로웨이스트</a>
           <ul class="m__submenu">
-            <li><a href="#">상품 추천</a></li>
+            <li><a href="../zerowaste/zerowasteMain.php">제로웨이스트란?</a></li>
           </ul>
         </li>
       </ul>

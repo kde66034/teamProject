@@ -1,10 +1,11 @@
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
+    include "../connect/sessionCheck.php";
 
     $category = $_GET['category'];
     
-    $categorySql = "SELECT * FROM newsBoard WHERE newsDelete = 0 AND newsCategory = '$category' ORDER BY newsID DESC LIMIT 10";
+    $categorySql = "SELECT * FROM newsBoard WHERE newsDelete = 0 AND newsCategory = '$category' ORDER BY newsID DESC";
     $categoryResult = $connect -> query($categorySql);
     $categoryInfo = $categoryResult -> fetch_array(MYSQLI_ASSOC);
     $categoryCount = $categoryResult -> num_rows;
@@ -60,8 +61,19 @@
 ?>          
                 </p>
 
-<?php
-                foreach($categoryResult as $news){ ?>
+<?php           
+                if(isset($_GET['page'])){
+                    $page = (int)$_GET['page'];
+                    } else {
+                        $page = 1;
+                    }
+                    $viewNum = 10;
+                    $viewLimit = ($viewNum * $page) - $viewNum;
+
+                    $sql = "SELECT * FROM newsBoard WHERE newsDelete = 0 AND newsCategory = '$category' ORDER BY newsID DESC LIMIT {$viewLimit}, {$viewNum}";
+                    $result = $connect -> query($sql);
+
+                foreach($result as $news){ ?>
 
                 <div class="news__document">
                     <a href="newsView.php?newsID=<?=$news['newsID']?>">
@@ -107,18 +119,18 @@
                 <div class="board__pages">
                     <ul>
 <?php
-    $sql = "SELECT count(newsID) FROM newsBoard";
+    $sql = "SELECT count(newsID) FROM newsBoard WHERE newsCategory = '$category'";
     $result = $connect -> query($sql);
     $newsCount = $result -> fetch_array(MYSQLI_ASSOC);
     $newsCount = $newsCount['count(newsID)'];
 
-    if(isset($_GET['page'])){
-        $page = (int)$_GET['page'];
-    } else {
-        $page = 1;
-    }
-    $viewNum = 10;
-    $viewLimit = ($viewNum * $page) - $viewNum;
+    // if(isset($_GET['page'])){
+    //     $page = (int)$_GET['page'];
+    // } else {
+    //     $page = 1;
+    // }
+    // $viewNum = 10;
+    // $viewLimit = ($viewNum * $page) - $viewNum;
     
     // 총 페이지 개수
     $newsCount = ceil($newsCount/$viewNum);
@@ -147,7 +159,7 @@
     if($page != $endPage){
         $nextPage = $page + 1;
         echo "<li><a href='newsCategory.php?category={$categoryInfo['newsCategory']}&page={$nextPage}'>다음</a></li>";
-        echo "<li><a href='newsCategory.php?category={$categoryInfo['newsCategory']}&page={$boardCount}'>마지막으로</a></li>";
+        echo "<li><a href='newsCategory.php?category={$categoryInfo['newsCategory']}&page={$newsCount}'>마지막으로</a></li>";
     }
 ?>
 
@@ -171,6 +183,8 @@
     <!-- //main -->
     <?php include "../include/footer.php" ?>
     <!-- //footer -->
+    <?php include "../login/login.php" ?>
+    <!-- //login -->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../assets/js/custom.js"></script>

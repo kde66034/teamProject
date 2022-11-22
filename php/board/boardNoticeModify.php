@@ -54,7 +54,6 @@
         echo "<div style='display:none'><label for='myNoticeBoardID'>번호</label><input type='text' name='myNoticeBoardID' id='myNoticeBoardID' value='".$info['myNoticeBoardID']."'></div>";
         echo "<div><label for='NoticeTitle'>제목</label><input type='text' name='NoticeTitle' id='NoticeTitle' value='".$info['NoticeTitle']."'></div>";
         echo "<div><label for='NoticeContents'>내용</label><textarea name='NoticeContents' id='NoticeContents' rows='20'>".$info['NoticeContents']."</textarea></div>";
-        echo "<div><label for='youPass'>비밀번호</label><input type='password' name='youPass' id='youPass' placeholder='현재 로그인하신 계정의 비밀번호를 입력해주세요.' autocomplete='off' required></input></div>";
     }
 ?>
 

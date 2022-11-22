@@ -68,7 +68,7 @@
                         </a>
                     </article>
                     <article class="card">
-                        <a href="silcheonQuiz.html">
+                        <a href="silcheonQuiz.php">
                             <figure class="card__header">
                                 <img src="../assets/img/gihusilcheon/card_bg02.jpg" alt="해외 뉴스">
                             </figure>

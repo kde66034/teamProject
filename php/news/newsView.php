@@ -6,7 +6,18 @@
     $newsSql = "SELECT * FROM newsBoard WHERE newsID = '$newsID'";
     $newsResult = $connect -> query($newsSql);
     $newsInfo = $newsResult -> fetch_array(MYSQLI_ASSOC);
-    $commentSql = "SELECT * FROM myNewsComment WHERE newsID = '$newsID' ORDER BY myCommentID DESC";
+
+    // 댓글
+    if(!isset($_SESSION['myMemberID'])) {
+        $myMemberID = -1;
+    }
+    else {
+        $myMemberID = $_SESSION['myMemberID'];
+    }
+    $youEmail = $_SESSION['youEmail'];
+    $myNewsID = $_GET['newsID'];
+
+    $commentSql = "SELECT * FROM myNewsComment WHERE newsID = '$myNewsID' ORDER BY myCommentID DESC";
     $commentResult = $connect -> query($commentSql);
     $commentInfo = $commentResult -> fetch_array(MYSQLI_ASSOC);
 ?>
@@ -118,7 +129,7 @@
                                 </div>
                                 <div class="comment__write__msg">
                                     <label for="commentWrite">댓글</label>
-                                    <input type="text" id="commentWrite" name="commentWrite" placeholder="댓글을 써주세요!">
+                                    <input type="text" id="commentWrite" name="commentWrite" placeholder="댓글을 입력해주세요.">
                                 </div>
                             </div>
                         </div>
@@ -194,6 +205,8 @@
         // 댓글 삭제 버튼 > 삭제 버튼 클릭시
         $("#commentDeleteButton").click(function(){
             let number = commentID.replace(/[^0-9]/g, "");
+            let myMemberID = <?=$myMemberID?>
+
             if($("#commentDeletePass").val() == ''){
                 alert("댓글 작성시 비밀번호를 적어주세요!");
             $("#commentDeletePass").focus();
@@ -204,11 +217,17 @@
                     dataType: "json",
                     data: {
                         "pass" : $("#commentDeletePass").val(),
-                        "commentID": number
+                        "commentID": number,
+                        "myMemberID": myMemberID,
                     },
                     success: function(data) {
-                        console.log(data);
-                        location.reload();
+                        if(data.info === "good"){
+                            alert("댓글이 삭제되었습니다.");
+                            location.reload();
+                        }
+                        else {
+                            alert("비밀번호가 일치하지 않거나 본인이 작성한 댓글이 아닙니다.");
+                        }
                     },
                     error: function(request, status, error){
                         console.log("request" + request);
@@ -245,11 +264,17 @@
                     data: {
                         "msg": $("#commentModifyMsg").val(),
                         "pass": $("#commentModifyPass").val(),
-                        "commentID": number
+                        "commentID": number,
+                        "myMemberID": <?=$myMemberID?>
                     },
                     success: function(data) {
-                        console.log(data);
-                        location.reload();
+                        if(data.info === "good"){
+                            alert("댓글이 수정되었습니다.");
+                            location.reload();
+                        }
+                        else {
+                            alert("비밀번호가 일치하지 않거나 본인이 작성한 댓글이 아닙니다.");
+                        }
                     },
                     error: function(request, status, error){
                         console.log("request" + request);
@@ -262,7 +287,7 @@
         // 댓글 쓰기
         $("#commentBtn").click( () => {
             if($("#commentWrite").val() == ""){
-                alert("댓글을 써주세요!")
+                alert("댓글을 작성해주세요!")
                 $("#commentWrite").focus();
             } else {
                 $.ajax({
@@ -273,7 +298,8 @@
                         "newsID": <?=$newsID?>,
                         "name": commentName.val(),
                         "pass": commentPass.val(),
-                        "msg": commentWrite.val()
+                        "msg": commentWrite.val(),
+                        "myMemberID": <?=$myMemberID?>
                     },
                     success: function(data) {
                         console.log(data);

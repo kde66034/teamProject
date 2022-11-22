@@ -487,9 +487,10 @@ span {
     left: 85%;
 }
 .msg {
-    font-size: 10px;
+    font-size: 13px;
     color: red;
     position: absolute;
+    margin-top: 8px;
 }
 /* 사용 가능한 아이디 아닌 아이디 */
 /* .id__already {

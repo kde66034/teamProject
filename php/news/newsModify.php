@@ -64,7 +64,7 @@
         </select></div>";
         echo "<div><label for='newsTitle'>제목</label><input type='text' name='newsTitle' id='newsTitle' value='".$info['newsTitle']."'></div>";
         echo "<div><label for='newsContents'>내용</label><textarea name='newsContents' id='newsContents' rows='20'>".$info['newsContents']."</textarea></div>";
-        echo "<div><label for='newsFile'>파일</label><input type='file' name='newsFile' id='newsFile' accept='.jpg, .jpeg, .png, .gif' placeholder='jpg, gif, png 파일만 넣어주세요!'></div>";
+        echo "<div><label for='newsImgFile'>파일</label><input type='file' name='newsImgFile' id='newsImgFile' accept='.jpg, .jpeg, .png, .gif' placeholder='jpg, gif, png 파일만 넣어주세요!'></div>";
     }
 ?>
 

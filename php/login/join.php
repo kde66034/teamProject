@@ -38,9 +38,9 @@
                                 <label for="youGender">* 성별</label>
                                 <fieldset class="gender">
                                       <input class="gender__btn" type="radio" name="gender" value="man"/>
-                                      <span>남</span>
+                                      <span>남성</span>
                                       <input class="gender__btn" type="radio" name="gender" value="woman"/>
-                                      <span>여</span>
+                                      <span>여성</span>
                                 </fieldset>
                             </span>
                             <div>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="joinend__btn">
-                            <a href="joinAgree.html">이전 단계로</a>
+                            <a href="joinAgree.php">이전 단계로</a>
                             <button type="submit" class="joinfinish">회원가입</button>
                         </div>
                     </fieldset>

@@ -46,6 +46,7 @@
     $youPassC = $_POST['youPassC'];
     $youGender = $_POST['youGender'];
     $youPhone = $_POST['youPhone'];
+    $youImgFile = $_POST['youImgFile'];
     $regTime = time();
 
     // echo $youEmail, $youName, $youPass, $youNickName, $youPhone, $regTime;
@@ -85,7 +86,7 @@
 
     // 비밀번호 검사
     if($youPass !== $youPassC){
-        msg("비밀번호가 일치하지 않습니다. <br> 다시 한번 확인해 주세요!");
+        echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 한번 확인해 주세요!');history.back();</script>";
         exit;
     } 
 
@@ -96,7 +97,7 @@
     $checkName = preg_match("/^[가-힣]{1,}$/", $youName);
 
     if($checkName == false){
-        msg("이름이 정확하지 않습니다.<br>한글로만 적어주세요!");
+        echo "<script>alert('이름이 정확하지 않습니다. 한글로만 적어주세요!');history.back();</script>";
         exit;
     }
 
@@ -104,7 +105,7 @@
     $checkNumber = preg_match("/^(010|011|016|017|018|019)-[0-9]{3,4}-[0-9]{4}$/", $youPhone);
 
     if($checkNumber == false){
-        msg("번호가 정확하지 않습니다.<br>올바른 핸드폰 번호(000-0000-0000)를 적어주세요");
+        echo "<script>alert('번호가 정확하지 않습니다. 올바른 핸드폰 번호(000-0000-0000)를 적어주세요');history.back();";
         exit;
     } 
 
@@ -122,11 +123,11 @@
             $isEmailCheck = true;
         } else {
             //로그인 유도
-            msg("이미 회원가입이 되어 있네요~~ 로그인 해주세요!!");
+            echo "<script>alert('이미 회원가입이 되어 있습니다. 로그인 해주세요!');location.replace('login2.php');</script>";
             exit;
         }
     } else {
-        msg("에러발생1 - 관리자에게 문의하세요");
+        echo "<script>alert('에러발생 - 관리자에게 문의하세요');history.back();</script>";
         exit;
     }
 
@@ -144,28 +145,28 @@
             $isPhoneCheck = true;
         } else {
             //로그인 유도
-            msg("이미 회원가입이 되어 있네요~~ 로그인 해주세요!!");
+            echo "<script>alert('이미 회원가입이 되어 있습니다. 로그인 해주세요!');location.replace('login2.php');</script>";
             exit;
         }
     } else {
-        msg("에러발생2 - 관리자에게 문의하세요");
+        echo "<script>alert('에러발생 - 관리자에게 문의하세요');history.back();</script>";
         exit;
     }
 
     //회원가입
     if($isEmailCheck == true && $isPhoneCheck == true){
-        $sql = "INSERT INTO myMember(youEmail, youName, youPass, youPhone, regTime) VALUES('$youEmail', '$youName', '$youPass', '$youPhone', '$regTime')";
+        $sql = "INSERT INTO myMember(youEmail, youName, youPass, youPhone, youImgFile, regTime) VALUES('$youEmail', '$youName', '$youPass', '$youPhone', 'earthonhero.png', '$regTime')";
         $result = $connect -> query($sql);
 
         if($result){
-            msg("회원가입을 축하합니다!<br><a href='../main/main.php'>메인으로 이동하기</a>");
+            echo "<br><div class='result__btn'><div class='result__btn__img'><a href='../main/main.php'>메인으로 이동</a></div></div>";
             exit;
         } else {
-            msg("에러발생3 - 관리자에게 문의하세요");
+            echo "<script>alert('에러발생 - 관리자에게 문의하세요.');history.back();</script>";
             exit;
         }
     } else {
-        msg("이메일 또는 핸드폰 번호가 틀립니다. 다시 한번 확인해주세요!");
+        echo "<script>alert('이메일 또는 핸드폰 번호가 틀립니다. 다시 한번 확인해주세요!');history.back();</script>";
         exit;
     }
 ?>

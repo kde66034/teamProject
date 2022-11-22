@@ -20,11 +20,11 @@
     $newsView = 1;
     $newsLike = 0;
     $regTime = time();
-    $newsImgFile = $_FILES['newsFile'];
-    $newsImgSize = $_FILES['newsFile']['size'];
-    $newsImgType = $_FILES['newsFile']['type'];
-    $newsImgName = $_FILES['newsFile']['name'];
-    $newsImgTmp = $_FILES['newsFile']['tmp_name'];
+    $newsImgFile = $_FILES['newsImgFile'];
+    $newsImgSize = $_FILES['newsImgFile']['size'];
+    $newsImgType = $_FILES['newsImgFile']['type'];
+    $newsImgName = $_FILES['newsImgFile']['name'];
+    $newsImgTmp = $_FILES['newsImgFile']['tmp_name'];
     echo "<pre>";
     var_dump($newsImgFile);
     echo "</pre>";
@@ -62,7 +62,7 @@
     }
     //이미지 사이즈 확인
     if($newsImgSize > 1000000){
-        echo "<script>alert('이미지 용량이 1메가를 초과했습니다.'); history.back(1)</script>";
+        echo "<script>alert('이미지 용량이 1MB를 초과했습니다.'); history.back(1)</script>";
         exit;
     }
     $result = $connect -> query($sql);

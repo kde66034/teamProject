@@ -1,0 +1,536 @@
+/* main */
+#main {
+    max-width: 1920px;    /* min-width: 480px; */
+    margin: 0 auto;
+    margin-top: 72px;
+}
+
+/* banner */
+#zero__banner {
+    background: #fcfbdf;
+    /* border-top: 15px solid #BED58C;
+    border-bottom: 15px solid #BED58C; */
+    text-align: center;
+}
+
+.zero__wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 250px 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.zero__wrap h2 {
+    display: inline-block;
+    border: 7px dashed #086B47;
+    padding: 20px;
+    border-radius: 50px;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #086B47;
+    box-shadow: 5px 10px 5px rgba(255, 231, 125, 0.395);
+}
+.zero__wrap h2:hover {
+    background-color: #fff;
+    color: #000;
+}
+.zero__wrap p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #999;
+}
+
+.zero__wrap .zero1 {
+    width: 12%;
+    position: absolute;
+    right: 417px;
+    top: 55px;
+}
+.zero__wrap .zero2 {
+    width: 20%;
+    position: absolute;
+    left: -50px;
+    top: 145px;
+    transition: all 0.5s;
+    font-size: 14px;
+}
+.zero__wrap .zero2:hover {
+    animation: zero 0.8s ease-out;
+    color: #999;
+}
+.zero__wrap .zero3 {
+    width: 15%;
+    position: absolute;
+    left: 250px;
+    bottom: 34px;
+}
+.zero__wrap .zero4 {
+    width: 20%;
+    position: absolute;
+    right: -100px;
+    top: 300px;
+    font-size: 14px;
+}
+.zero__wrap .zero4:hover {
+    animation: zero 0.8s ease-out;
+    color: #999;
+}
+.zero__wrap .zero5 {
+    width: 16%;
+    position: absolute;
+    left: 250px;
+    top: 20px;
+    font-size: 14px;
+}
+.zero__wrap .zero5:hover {
+    animation: zero 0.8s ease-out;
+    color: #999;
+}
+.zero__wrap .zero6 {
+    width: 14%;
+    position: absolute;
+    right: 80px;
+    top: 30px;
+    font-size: 14px;
+}
+.zero__wrap .zero6:hover {
+    animation: zero 0.8s ease-out;
+    color: #999;
+}
+.zero__wrap .zero7 {
+    width: 14%;
+    position: absolute;
+    right: 323px;
+    top: 365px;
+    font-size: 14px;
+}
+.zero__wrap .zero7:hover {
+    animation: zero 0.8s ease-out;
+    color: #999;
+}
+@keyframes zero {
+    0% {transform:translateY(0px)}
+    50% {transform:translateY(-17px)}
+    100% {transform:translateY(0px)}
+}
+#zerowaste {}
+#zerowaste > h3 {
+    text-align: center;
+    margin: 50px auto;
+    font-size: 40px;
+}
+i {
+    color: #086B47;
+}
+#zerowaste > h3 {
+    opacity: 0;
+    /* 밑에서 위로 올라오는 효과 */
+    transform: translateY(30px);
+    transition: all 2s 0.1s cubic-bezier(0, 0.38, 0.21, 0.99);
+}
+
+#zerowaste.show > h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#zerowaste img {
+  opacity: 0;
+  /* 밑에서 위로 올라오는 효과 */
+  transform: translateY(30px);
+  transition: all 2s 0.4s cubic-bezier(0, 0.38, 0.21, 0.99);
+}
+#zerowaste.show img {
+  opacity: 1;
+  transform: translateY(0);
+  word-break: keep-all;
+}
+
+#zerowaste .zero__desc {
+  opacity: 0;
+  /* 밑에서 위로 올라오는 효과 */
+  transform: translateY(30px);
+  transition: all 2s 0.6s cubic-bezier(0, 0.38, 0.21, 0.99);
+  word-break: keep-all;
+}
+
+#zerowaste.show .zero__desc {
+  opacity: 1;
+  transform: translateY(0);
+  word-break: keep-all;
+}
+.zero__main {
+    display: flex;
+    justify-content: space-between;
+}
+.zero__main img {
+    width: 400px;
+    height: 380px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+.zero__main .zero__desc {
+    font-size: 18px;
+    word-break: keep-all;
+    line-height: 1.7;
+}
+.zero__solution {
+    background-color: #F8F8F8;
+    padding-bottom: 50px;
+}
+.zero__solution > h3 {
+    font-size: 30px;
+    text-align: center;
+    padding: 50px 0;
+}
+.zero__sbox {}
+.zero__sbox .zero__stit {
+    text-align: left;
+    /* border: 1px solid #086B47; */
+    border-radius: 50px;
+    background-color: #086B47;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+/* .zero__sbox .zero__stit:hover {
+    background-color: #fff;
+    color: #086B47;
+} */
+.zero__sbox .zero__sdesc {
+    /* display: none; */
+    height: 100px;
+    color: #086B47;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+.zero__sbox .zero__sdesc.show {
+    display: block;
+    height: 100px;
+    color: #086B47;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+/* 제로웨이스트 상품추천 페이지 */
+#zerorecommend__main{
+    background: #fff;
+    text-align: center;
+    /* position: absolute;
+    top: 0;
+    right: 0;
+    left: 0; */
+    z-index: -1;
+    position: relative;
+    width: 100%;
+}
+  
+svg path {
+  transition: 0.1s;
+}
+svg:hover path {
+  d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
+}
+.recom__wrap {
+    max-width: 1280px;
+    margin: 150px auto;
+    box-sizing: border-box;
+    background: url(../img/zerowasterecommend.png) no-repeat;
+    background-size: 300px;
+    background-position: 10% 50%;
+    font-size: 50px;
+    line-height: 1.5;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 15%;
+}
+.recom__wrap > span {
+    color: #086B47;
+    font-size: 70px;
+    font-weight: 700;
+}
+.recom__wrap > p {
+    font-size: 12px;
+}
+
+/* 베스트 상품 */
+#zero__best {
+    background: #fff;
+    width: 100%;
+}
+.month__best {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #b0ecfb;
+    margin-bottom: 20px;
+
+}
+.month__best > h3{
+    font-size: 50px;
+    line-height: 1.5;
+    margin-left: 30px;
+    color: #fff;
+    padding-top: 30px;
+    margin-right: 44px;
+}
+.swiper {
+    width: 74.5%;
+    height: 350px;
+    background-color: #b0ecfb;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.month__recom {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #b0ecfb;
+    margin-bottom: 20px;
+}
+.month__recom > h3{
+    font-size: 50px;
+    line-height: 1.5;
+    margin-left: 60px;
+    color: #fff;
+    padding-top: 30px;
+} 
+@media (max-width: 1280px) {
+    #zero__banner {
+        height: 260px;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap {
+        padding: 80px 70px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap p {
+        font-size: 18px;
+        line-height: 1.6;
+        transition: all 0.2s ease-in;
+    }
+    .zero__wrap .zero1 {
+        display: none;
+    } 
+    .zero__wrap .zero2 {
+        display: none;
+    } 
+    .zero__wrap .zero3 {
+        display: none;
+    } 
+    .zero__wrap .zero4 {
+        display: none;
+    } 
+    .zero__wrap .zero5 {
+        display: none;
+    } 
+    .zero__wrap .zero6 {
+        display: none;
+    } 
+    .zero__wrap .zero7 {
+        display: none;
+    } 
+}
+@media (max-width: 960px) {
+    #zerowaste img {
+        margin-top: 80px;
+    }
+}
+@media (max-width: 940px) {
+    #zero__banner {
+        height: 214px;
+        border-bottom: 13px solid #BED58C;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap {
+        padding: 60px 50px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap h2 {
+        font-size: 29px;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap p {
+        font-size: 16px;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap img {
+        width: 41%;
+        transition: all 0.2s ease-in;
+    }
+}
+@media (max-width: 900px) {
+    .zero__main {
+        display: block;
+    }
+    #zerowaste img {
+        display: block;
+        margin: 50px auto;
+    }
+} 
+
+@media (max-width: 768px) {
+    #zero__banner {
+        height: 182px;
+        border-bottom: 10px solid #BED58C;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap {
+        padding: 50px 40px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap h2 {
+        font-size: 22px;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap p {
+        font-size: 14px;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap img {
+        width: 34%;
+        right: -30px;
+        transition: all 0.2s ease-in;
+    }
+}
+
+@media (max-width: 720px) {
+    #zerowaste > h3 {
+        font-size: 30px;
+    }
+    #zerowaste img {
+        width: 250px;
+        height: 250px;
+    }
+    #zerowaste .zero__desc {
+        font-size: 16px;
+    }
+    .zero__sbox .zero__sdesc {
+        font-size: 14px;
+    }
+} 
+
+@media (max-width: 610px) {
+    #zero__banner {
+        height: 120px;
+        border-bottom: 8px solid #BED58C;
+        transition: all 0.1s ease-in;
+    }
+    .zero__wrap {
+        padding: 20px 70px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap h2 {
+        font-size: 16px;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap p {
+        display: none;
+    }
+
+    .zero__wrap img {
+        right: 40px;
+        bottom: 18px;
+        transition: all 0.2s ease-in;
+    }
+}
+@media (max-width: 524px) {
+    .zero__sbox .zero__sdesc {
+        font-size: 12px;
+    }
+}
+@media (max-width: 480px) {
+    #zerowaste > h3 {
+        font-size: 24px;
+    }
+    #zero__banner {
+        height: 80px;
+        border-bottom: 8px solid #BED58C;
+        transition: all 0.1s ease-in;
+    }
+
+    .zero__wrap {
+        padding: 12px 70px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in;
+    }
+
+    .zero__wrap h2 {
+        font-size: 16px;
+        transition: all 0.2s ease-in;
+        padding: 10px 20px;
+    }
+    .zero__solution > h3 {
+        font-size: 24px;
+    }
+    .zero__sbox .zero__sdesc {
+        display: none;
+    }
+}
+@media (max-width: 400px) {
+    #zerowaste > h3 {
+        font-size: 20px;
+    }
+    #zerowaste .zero__desc {
+        font-size: 14px;
+    }
+    .zero__solution > h3 {
+        font-size: 20px;
+    }
+    .zero__sbox .zero__stit {
+        font-size: 12px;
+    }
+}

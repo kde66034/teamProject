@@ -60,8 +60,8 @@
                                 <textarea name="newsContents" id="newsContents" rows="20" placeholder="게시글의 내용을 입력해주세요."></textarea>
                             </div>
                             <div>
-                                <label for="newsFile">파일</label>
-                                <input type="file" name="newsFile" id="newsFile" accept=".jpg, .jpeg, .png, .gif" placeholder="jpg, gif, png 파일만 넣어주세요!">
+                                <label for="newsImgFile">파일</label>
+                                <input type="file" name="newsImgFile" id="newsImgFile" accept=".jpg, .jpeg, .png, .gif" placeholder="jpg, gif, png 파일만 넣어주세요!">
                             </div>
                             <div class="news__write__btn">
                                 <a href="#" class="back_btn">게시판으로</a>

@@ -35,13 +35,17 @@
                 <div class="board__num">
                     <!-- <p>※ 총 <em>275</em>건의 공지사항이 있습니다.</p> -->
 <?php
-    $sql = "SELECT NoticeContents FROM myNoticeBoard";
+    $sql = "SELECT count(myNoticeBoardID) FROM myNoticeBoard";
     $result = $connect -> query($sql);
+    $noticeCount = $result -> fetch_array(MYSQLI_ASSOC);
+    $noticeCount = $noticeCount['count(myNoticeBoardID)'];
     
-    if($result){
-        $count = $result -> num_rows;
-        echo "<p>※ 총 <em>".$count."</em>건의 공지사항이 등록되어 있습니다.</p>";
+    if(isset($_GET['page'])){
+        $page = (int)$_GET['page'];
+    } else {
+        $page = 1;
     }
+    echo "<p>※ 총 <em>{$noticeCount}</em>건의 공지사항이 등록되어 있습니다.</p>";
 ?>
                 </div>
                 <div class="Notice__table">
@@ -54,17 +58,14 @@
                         <tbody>
 <?php
 
+
 if(isset($_GET['page'])){
     $page = (int)$_GET['page'];
-} else {
-    $page = 1;
-}
-
-// $page = 20;
+    } else {
+        $page = 1;
+    }
 $viewNum = 10;
 $viewLimit = ($viewNum * $page) - $viewNum;
-
-// echo $_GET['page'];
 
 
 // 두 개의 테이블을 join
@@ -73,7 +74,6 @@ $result = $connect -> query($sql);
 
 if($result){
     $count = $result -> num_rows;
-    var_dump($count);
     if($count > 0){
         for($i=1; $i <= $count; $i++){
             $info = $result -> fetch_array(MYSQLI_ASSOC);

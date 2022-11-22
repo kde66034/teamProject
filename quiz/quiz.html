@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기후실천 퀴즈</title>
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#"><img src="../assets/img/logo.png" alt="지구ON 로고"></a></h1>
+        <nav class="header__nav">
+            <ul class="clearfix">
+                <li><a href="#">지구ON 소개</a>
+                    <ul class="submenu">
+                        <li><a href="#">스토리</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">기후 소식</a>
+                    <ul class="submenu">
+                        <li><a href="#">국내 뉴스</a></li>
+                        <li><a href="#">해외 뉴스</a></li>
+                        <li><a href="#">캠페인 & 이벤트</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">기후 실천</a>
+                    <ul class="submenu">
+                        <li><a href="#">실천 다이어리</a></li>
+                        <li><a href="#">식물 키우기</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">제로웨이스트</a>
+                    <ul class="submenu">
+                        <li><a href="#">상품 추천</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">커뮤니티</a>
+                    <ul class="submenu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">이야기방</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 반응형 전용 -->
+        <nav class="mobile__nav">
+            <ul class="mobile__menuWrap">
+                <li><a href="#" class="big_menu">지구ON 소개</a>
+                    <ul class="m__submenu">
+                        <li><a href="#">스토리</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="mobile__menuWrap">
+                <li><a href="#" class="big_menu">기후 소식</a>
+                    <ul class="m__submenu">
+                        <li><a href="#">국내 뉴스</a></li>
+                        <li><a href="#">해외 뉴스</a></li>
+                        <li><a href="#">캠페인 & 이벤트</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="mobile__menuWrap">
+                <li><a href="#" class="big_menu">제로웨이스트</a>
+                    <ul class="m__submenu">
+                        <li><a href="#">상품 추천</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="mobile__menuWrap">
+                <li><a href="#" class="big_menu">커뮤니티</a>
+                    <ul class="m__submenu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">이야기방</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__login">
+            <a href="../login/login.html">로그인</a>
+        </div>
+        <div class="header__ham">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <!-- // header-->
+
+
+    <section id="climateQuiz">
+        <div class="quiz__title">
+            <img src="../assets/img/quizicon.png" alt="QnA" class="img1">
+            <h2>기후실천 퀴즈</h2>
+            <img src="../assets/img/quizicon2.png" alt="saveEarth" class="img2">
+        </div>
+        <p>
+            퀴즈를 풀면서 기후 위기에 대한 예방 및 실천의 중요성을 배우고, <br>
+            지구 환경을 지키기 위한 실천 방법을 배워봅시다.
+        </p>
+        <div class="quiz__wrap container">
+            <div class="quiz__inner">
+                <div class="quiz__question">
+                    <!-- <div class="quiz__number">1</div>
+                    <div class="quiz__ask">퀴즈 질문입니다.</div> -->
+                </div>
+                <!-- //quiz__question -->
+                <div class="quiz__view">
+                    <div class="true">정답입니다 🤓</div>
+                    <div class="false">오답입니다 🥺</div>
+                    <div class="quiz__result"></div>
+                </div>
+                <!-- //quiz__view --> 
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <!-- <label for="select1">
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <span class="choice img1"></span>
+                        </label>
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <span class="choice img2"></span>
+                        </label> -->
+                    </div>
+                    <!-- //quiz__selects -->
+                </div>
+                <!-- //quiz__answer -->
+            </div>
+            <!-- //quiz__inner -->
+            <div class="quiz__start">
+                <img src="../assets/img/quizicon3.png" alt="earthON">
+                <div class="startBtn">시작하기</div>
+            </div>
+            <div class="quiz__foot">
+                <button class="quiz__confirm">다음 문제로 👉</button>
+                <div class="finish">
+                    <div class="finishCont">10개를 맞추었습니다.</div>
+                    <button class="restart">🔙 다시 풀어보기</button>
+                </div>
+            </div>
+        </div>
+        <!-- //quiz__wrap -->
+    </section>
+    <!-- //climateQuiz -->
+
+    <footer id="footer" class="clearfix">
+        <div id="footer__wrap" class="container">
+            <h2><img src="../assets/img/footer_logo.png" alt="지구ON Footer 로고"></h2>
+            <div class="foot">
+                <ul>
+                    <li><a href="#">이용안내</a></li><em>|</em>
+                    <li><a href="#">개인정보처리방침</a></li><em>|</em>
+                    <li><a href="#">이용약관</a></li><em>|</em>
+                    <li><a href="#">개인정보수집·이용동의</a></li>
+                </ul>
+                <address>
+                    주소 : 경기도 성남시 분당구 판교로 지구빌딩 5층<em> | </em>대표전화 : 010-2123-3049<br>
+                    Copyright &copy; 2022 지구ON, All Rights Reserved.
+                </address>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

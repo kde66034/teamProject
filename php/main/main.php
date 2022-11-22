@@ -48,7 +48,7 @@
         <div class="main__btn">
           <a href="#mainCard">risk</a>
           <a href="#mainBanner">purpose</a>
-          <a href="#">solution</a>
+          <a href="#hero-section">solution</a>
         </div>
       </div>
     </section>
@@ -155,7 +155,7 @@
       </div>
     </section>
     <!-- //"mainBanner" -->
-    <section class="hero-section">
+    <section id="hero-section" class="hero-section">
       <div class="card-grid">
         <a class="card" href="../news/newsMain.php">
           <div class="card__background" style="background-image: url(../assets/img/bulb.png)">
@@ -230,6 +230,16 @@
       resolution: 900,
       dropRadius: 10,
       perturbance: 0.02,
+    });
+
+    // 스크롤 이동 스무스하게
+    document.querySelectorAll(".main__btn a").forEach(a => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"  // 이동 부드럽게
+        });
+      });
     });
 
     // top 버튼

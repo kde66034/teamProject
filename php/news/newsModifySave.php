@@ -17,18 +17,30 @@
     $newsID = $_POST['newsID'];
     $newsTitle = $_POST['newsTitle'];
     $newsContents = $_POST['newsContents'];
-    // $youPass = $_POST['youPass'];
+    $newsCategory = $_POST['newsCategory'];
     $myMemberID = $_SESSION['myMemberID'];
 
-    $boardTitle = $connect -> real_escape_string($boardTitle);
-    $boardContents = $connect -> real_escape_string($boardContents);
+    $newsTitle = $connect -> real_escape_string($newsTitle);
+    $newsContents = $connect -> real_escape_string($newsContents);
+
+    $sql = "SELECT myMemberID FROM newsBoard WHERE myMemberID = {$myMemberID}";
+    $result = $connect -> query($sql);
+
+    $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
+
+    if($memberInfo['myMemberID'] === $myMemberID){
+        $sql = "UPDATE newsBoard SET newsTitle = '{$newsTitle}', newsContents = '{$newsContents}', newsCategory = '{$newsCategory}' WHERE newsID = '{$newsID}'";
+        $connect -> query($sql);
+    }else {
+        echo "<script>alert('직접 작성한 게시글만 수정할 수 있습니다.')</script>";
+    }
 
     // $sql = "SELECT youPass, myMemberID FROM myMember WHERE myMemberID = {$myMemberID}";
-    $sql = "UPDATE newsBoard SET newsTitle = '{$newsTitle}', newsContents = '{$newsContents}' WHERE newsID = '{$newsID}'";
+    // $sql = "UPDATE newsBoard SET newsTitle = '{$newsTitle}', newsContents = '{$newsContents}' WHERE newsID = '{$newsID}'";
     // $result = $connect -> query($sql);
 
     // $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
-    $connect -> query($sql);
+    // $connect -> query($sql);
 
     //서버에 있는 유패스memberInfo['youPass']랑 우리 유패스랑 같은지
     // if($memberInfo['youPass'] === $youPass && $memberInfo['myMemberID'] === $myMemberID){

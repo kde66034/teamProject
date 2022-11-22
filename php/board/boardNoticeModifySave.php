@@ -16,24 +16,23 @@
 <?php
     $myNoticeBoardID = $_POST['myNoticeBoardID'];
     $NoticeTitle = $_POST['NoticeTitle'];
-    $NoticeContents = $_POST['NoticeContents'];
+    $NoticeContents = nl2br($_POST['NoticeContents']);
     $youPass = $_POST['youPass'];
-    $myAdminMemberID = $_SESSION['myMemberID'];
+    $myAdminMemberID = '1';
 
     $NoticeTitle = $connect -> real_escape_string($NoticeTitle);
     $NoticeContents = $connect -> real_escape_string($NoticeContents);
 
-    $sql = "SELECT youPass, myMemberID FROM myMember WHERE myMemberID = {$myAdminMemberID}";
+    $sql = "SELECT myAdminMemberID FROM myNoticeBoard WHERE myAdminMemberID = {$myAdminMemberID}";
     $result = $connect -> query($sql);
 
     $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
 
-    //서버에 있는 유패스memberInfo['youPass']랑 우리 유패스랑 같은지
-    if($memberInfo['youPass'] === $youPass && $memberInfo['myMemberID'] === $myAdminMemberID){
+    if($memberInfo['myAdminMemberID'] == $myAdminMemberID){
         $sql = "UPDATE myNoticeBoard SET NoticeTitle = '{$NoticeTitle}', NoticeContents = '{$NoticeContents}' WHERE myNoticeBoardID = '{$myNoticeBoardID}'";
         $connect -> query($sql);
     }else {
-        echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 한번 확인해주세요!')</script>";
+        echo "<script>alert('공지사항 게시글을 수정할 권한이 없습니다.')</script>";
     }
 ?>
 <script>

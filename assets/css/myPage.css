@@ -236,11 +236,14 @@
     display: flex;
     position: relative;
     flex-wrap: wrap;
+    align-items: center;
+    padding-left: 15px;
 }
 .profile tbody tr td .personal {
-    width: 180px;
-    height: 150px;
-    transform: scaleX(-1);
+    width: 120px;
+    height: 120px;
+    border: 4px solid #006241;
+    border-radius: 50%;
 }
 .profile tbody tr td .profileInfo {
     padding: 40px 50px;

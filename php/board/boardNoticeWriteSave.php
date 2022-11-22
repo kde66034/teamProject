@@ -4,7 +4,7 @@
     include "../connect/sessionCheck2.php";
 
     $NoticeTitle = $_POST['NoticeTitle'];
-    $NoticeContents = $_POST['NoticeContents'];
+    $NoticeContents = nl2br($_POST['NoticeContents']);
 
     $NoticeTitle = $connect -> real_escape_string($NoticeTitle);
     $NoticeContents = $connect -> real_escape_string($NoticeContents);

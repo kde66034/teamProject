@@ -45,7 +45,7 @@
                 <ul class="desc">
                     <li>지구ON</li>
                 </ul>
-                <button type="button" class="btn-close"><span>닫기</span></button>
+                <a href="javascript:window.history.back();"><button type="button" class="btn-close"><span>닫기</span></button></a>
             </div>
         </div>
         <!-- //로그인창 -->

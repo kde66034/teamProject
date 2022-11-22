@@ -4,7 +4,7 @@
     include "../connect/sessionCheck.php";
 
     $boardTitle = $_POST['boardTitle'];
-    $boardContents = $_POST['boardContents'];
+    $boardContents = nl2br($_POST['boardContents']);
 
     $boardTitle = $connect -> real_escape_string($boardTitle);
     $boardContents = $connect -> real_escape_string($boardContents);

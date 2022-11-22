@@ -22,7 +22,7 @@
 
         if($youPass == $youPassC){
             $sql = "UPDATE myMember SET youPass = '{$youPass}' WHERE myMemberID = '{$myMemberID}'";
-            echo "<script>alert('비밀번호 재설정이 성공했습니다! 다시 로그인 해주세요.'); location.href='../main/main.php';</script>";    
+            echo "<script>alert('비밀번호 재설정이 성공했습니다! 다시 로그인 해주세요.'); location.href='logout.php';</script>";    
         } else {
             echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 시도해주세요.'); history.back(1)</script>";
         }
@@ -31,6 +31,6 @@
     ?>
 </body>
 <script>
-    
+    //../main/main
 </script>
 </html>
